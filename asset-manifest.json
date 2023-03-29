@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/qa-playground/static/css/main.964fdded.css",
+    "main.js": "/qa-playground/static/js/main.3d9d1310.js",
+    "static/js/787.98f40ae0.chunk.js": "/qa-playground/static/js/787.98f40ae0.chunk.js",
+    "index.html": "/qa-playground/index.html",
+    "main.964fdded.css.map": "/qa-playground/static/css/main.964fdded.css.map",
+    "main.3d9d1310.js.map": "/qa-playground/static/js/main.3d9d1310.js.map",
+    "787.98f40ae0.chunk.js.map": "/qa-playground/static/js/787.98f40ae0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.964fdded.css",
+    "static/js/main.3d9d1310.js"
+  ]
+}

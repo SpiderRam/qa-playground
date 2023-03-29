@@ -6,7 +6,7 @@ This project is a lightweight React app, intended to create some somewhat intere
 
 ### Running locally 
 
-Will launch at [http://localhost:9001/playwright-ui](http://localhost:9001/playwright-ui):
+Will launch at [http://localhost:9001/qa-playground](http://localhost:9001/qa-playground):
 
 ```
 npm start

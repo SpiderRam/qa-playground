@@ -1,6 +1,6 @@
 {
-  "name": "playwright-ui",
-  "homepage": "https://spiderram.github.io/playwright-ui",
+  "name": "qa-playground",
+  "homepage": "https://spiderram.github.io/qa-playground",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

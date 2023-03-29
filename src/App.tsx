@@ -7,7 +7,7 @@ import Cards from './Components/Routes/Cards';
 function App() {
   return (
     <div className="App">
-      <Router basename="/playwright-ui">
+      <Router basename="/qa-playground">
         <Routes>
           <Route path="/" element={<h1>🛠 Under construction</h1>} />
           <Route path="nasa" element={<Nasa />} />

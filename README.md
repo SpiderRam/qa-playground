@@ -22,6 +22,16 @@ npm run deploy
 
 ## Setup Notes
 
+### Versions
+
+This was built on node 16.15.1 / npm 8.11.0.
+
+### Primary dependencies
+
+- [Mui](https://mui.com/material-ui/getting-started/overview/)
+
+### General
+
 This project is a means to an end, and a simple deployment was a top priority.  
 
 - enable app routing

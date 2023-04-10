@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Nasa from './Components/Routes/Nasa'
 import Cards from './Components/Routes/Cards'
 import NavBar from './Components/NavBar'
+import Footer from './Components/Footer'
 
 function App() {
 	return (
@@ -15,6 +16,7 @@ function App() {
 					<Route path="nasa" element={<Nasa />} />
 					<Route path="cards" element={<Cards />} />
 				</Routes>
+				<Footer />
 			</Router>
 		</div>
 	)

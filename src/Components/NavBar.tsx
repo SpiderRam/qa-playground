@@ -48,7 +48,9 @@ function NavBar() {
 	}
 
 	return (
-		<AppBar position="static">
+		<AppBar position="static" sx={{
+			backgroundColor: '#0E5D77',
+		}}>
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<DesktopWindowsTwoToneIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />

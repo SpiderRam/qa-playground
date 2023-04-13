@@ -11,8 +11,29 @@ import Main from './Components/Routes/Main'
 
 const theme = createTheme({
 	typography: {
-		fontFamily: 'Nunito, sans-serif'
-	}
+		fontFamily: 'Nunito, sans-serif',
+		h1: {
+			fontSize:'3rem',
+		},
+		h2: {
+			fontSize:'2rem',
+			color: '#595959'
+		},
+	},
+	palette: {
+		primary: {
+			main: '#0E5D77',
+			light: '#5f93a5',
+			dark: '#afc9d2',
+			contrastText: '#FFF',
+		},
+		secondary: {
+			main: '#0e7767',
+			light: '#5fa59a',
+			dark: '#afd2cd',
+			contrastText: '#FFF',
+		},
+	},
 })
 
 

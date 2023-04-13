@@ -47,17 +47,14 @@ function NavBar() {
 	}
 
 	return (
-		<AppBar position="static" sx={{
-			backgroundColor: '#0E5D77',
-		}}>
+		<AppBar position="static">
 			<Container maxWidth="xl">
 				<Toolbar disableGutters>
 					<DesktopWindowsTwoToneIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
 					<Typography
 						variant="h6"
 						noWrap
-						component="a"
-						href="/qa-playground"
+						component="span"
 						sx={{
 							mr: 2,
 							display: { xs: 'none', md: 'flex' },
@@ -112,8 +109,7 @@ function NavBar() {
 					<Typography
 						variant="h5"
 						noWrap
-						component="a"
-						href=""
+						component="span"
 						sx={{
 							mr: 2,
 							display: { xs: 'flex', md: 'none' },

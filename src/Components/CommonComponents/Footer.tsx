@@ -32,7 +32,7 @@ export default function FixedBottomNavigation() {
 					</Tooltip>
 				</a>
 			</Paper>
-			<Paper id='wut' sx={{
+			<Paper sx={{
 				position: 'fixed',
 				bottom: 0,
 				left: 0,

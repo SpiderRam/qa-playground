@@ -47,7 +47,7 @@ function App() {
 			<div className="App">
 				<Router basename="/qa-playground">
 					<NavBar />
-					<Typography sx={{ paddingBottom: '3rem' }} component={'main'}>
+					<Typography sx={{ paddingBottom: '6rem', paddingTop: '2rem' }} component={'main'}>
 						<Routes>
 							<Route path="/" element={<Main />} />
 							<Route path="nasa" element={<Nasa />} />

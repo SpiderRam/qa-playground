@@ -4,7 +4,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemText from '@mui/material/ListItemText'
 import Avatar from '@mui/material/Avatar'
 import IconButton from '@mui/material/IconButton'
-import DeleteIcon from '@mui/icons-material/Delete'
+import DeleteTwoToneIcon from '@mui/icons-material/DeleteTwoTone'
 import LabelIcon from '@mui/icons-material/Label'
 import CheckIcon from '@mui/icons-material/Check'
 import ClearIcon from '@mui/icons-material/Clear'
@@ -35,14 +35,14 @@ export default function InteractiveList() {
 	return (
 		<Grid
 			container
-			columns={{ xs: 1, sm: 5, md: 5 }}
+			columns={{ xs: 1, sm: 6, md: 6 }}
 		>
 			<Grid
 				item={true}
-				sx={{ paddingX: '1vw', paddingY: '2rem' }}
+				sx={{ paddingX: '1vw', paddingTop: '2rem' }}
 				xs={1}
-				sm={2}
-				md={2}
+				sm={3}
+				md={3}
 			>
 				<TextField
 					onChange={(event: ChangeEvent<HTMLInputElement>) => {
@@ -89,6 +89,29 @@ export default function InteractiveList() {
 						</InputAdornment>
 					}}
 				/>
+				<Card
+					sx={{
+						display: { xs: 'none', md: 'block' },
+						marginTop: '1rem'
+					}}
+				>
+					<Typography
+						sx={{
+							fontSize: '1.7rem',
+							marginTop: '0.5rem'
+						}}
+					>
+                        Behaviors
+					</Typography>
+					<ul className='behaviors'>
+						<li>List items will not survive page reload.</li>
+						<li>Buttons in the text field will be disabled if field is empty, and enabled when there is a value.</li>
+						<li>After clicking either text field icon, the field should retain focus.</li>
+						<li>When an item is added, it will appear at the top of the list.</li>
+						<li>Clicking the trash icon on any list item should delete that item.</li>
+						<li>On mobile screens, the text field should stack over the item list.</li>
+					</ul>
+				</Card>
 			</Grid>
 			<Grid item={true} sx={{ paddingX: '1vw', paddingY: '2rem' }} xs={1} sm={3} md={3}>
 				<Card sx={{ padding: '1rem' }}>
@@ -105,7 +128,7 @@ export default function InteractiveList() {
 												aria-label="delete"
 												onClick={() => { removeItem(index) }}
 											>
-												<DeleteIcon />
+												<DeleteTwoToneIcon />
 											</IconButton>
 										}
 									>

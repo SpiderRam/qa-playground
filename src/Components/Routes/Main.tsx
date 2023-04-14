@@ -4,6 +4,7 @@ import Tab from '@mui/material/Tab'
 import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import MainTabTextList from '../RouteComponents/MainTabTextList'
+import icon16 from '../../Images/bug_wrench_16px.png'
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -47,8 +48,8 @@ export default function Main() {
 		<Box sx={{
 			marginX: '2rem'
 		}}>
-			<Typography variant='h1'>Mui-ness</Typography>
-			<Typography variant='h2'>Tabs should scroll on small screens</Typography>
+			<Typography variant='h1'>Interactive Components</Typography>
+			<Typography variant='h3' sx={{ display: { xs: 'none', md: 'block' } }}><img src={icon16} alt='test behavior list bullet' /> Tabs should scroll on small screens</Typography>
 			<Box sx={{
 				width: '100%',
 				marginY: '1rem',

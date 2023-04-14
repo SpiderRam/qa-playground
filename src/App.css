@@ -1,3 +1,15 @@
 .App {
     text-align: center;
 }
+
+ul.behaviors {
+    text-align: left;
+}
+
+ul.behaviors li::marker {
+    content: url('./Images/bug_wrench_16px.png');
+}
+
+ul.behaviors li {
+    padding-left: 1ch;
+}

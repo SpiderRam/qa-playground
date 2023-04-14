@@ -1,5 +1,6 @@
 import { Tooltip, Typography } from '@mui/material'
 import Paper from '@mui/material/Paper'
+import icon32 from '../../Images/bug_wrench_32px.png'
 
 export default function FixedBottomNavigation() {
 
@@ -28,6 +29,7 @@ export default function FixedBottomNavigation() {
 				<a target={'_blank'} href="https://www.flaticon.com/free-icons/fix" rel="noreferrer">
 					<Tooltip
 						title="Fix icons created by Freepik - Flaticon"
+						placement='top'
 						componentsProps={{
 							tooltip: {
 								sx: {
@@ -39,7 +41,7 @@ export default function FixedBottomNavigation() {
 							},
 						}}
 					>
-						<img alt='Bug icon' src={process.env.PUBLIC_URL + '/bug_wrench_32px.png'} />
+						<img alt='Bug icon' src={icon32} />
 					</Tooltip>
 				</a>
 			</Paper>
@@ -49,8 +51,7 @@ export default function FixedBottomNavigation() {
 				left: 0,
 				right: 0,
 				paddingY: 1,
-				borderTopRadius: 0,
-				borderBottomRadius: 0,
+				borderRadius: 0,
 				boxShadow: 'none',
 				background: 'linear-gradient(to top, #0E5D77, #fff)',
 				height: '8px'

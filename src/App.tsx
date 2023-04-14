@@ -1,4 +1,3 @@
-import React from 'react'
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Nasa from './Components/Routes/Nasa'
@@ -6,18 +5,23 @@ import Cards from './Components/Routes/Cards'
 import NavBar from './Components/CommonComponents/NavBar'
 import Footer from './Components/CommonComponents/Footer'
 import '@fontsource/nunito'
-import { ThemeProvider, createTheme } from '@mui/material'
+import { ThemeProvider, Typography, createTheme } from '@mui/material'
 import Main from './Components/Routes/Main'
 
 const theme = createTheme({
 	typography: {
 		fontFamily: 'Nunito, sans-serif',
+		fontWeightLight: 200,
 		h1: {
 			fontSize:'3rem',
 		},
 		h2: {
 			fontSize:'2rem',
-			color: '#595959'
+			color: '#2d2d2d'
+		},
+		h3: {
+			fontSize:'1.5rem',
+			color: '#595959',
 		},
 	},
 	palette: {
@@ -43,11 +47,13 @@ function App() {
 			<div className="App">
 				<Router basename="/qa-playground">
 					<NavBar />
-					<Routes>
-						<Route path="/" element={<Main />} />
-						<Route path="nasa" element={<Nasa />} />
-						<Route path="cards" element={<Cards />} />
-					</Routes>
+					<Typography sx={{ paddingBottom: '3rem' }} component={'main'}>
+						<Routes>
+							<Route path="/" element={<Main />} />
+							<Route path="nasa" element={<Nasa />} />
+							<Route path="cards" element={<Cards />} />
+						</Routes>
+					</Typography>
 					<Footer />
 				</Router>
 			</div>

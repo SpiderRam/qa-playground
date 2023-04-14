@@ -23,7 +23,7 @@ function TabPanel(props: TabPanelProps) {
 			{...other}
 		>
 			{value === index && (
-				<Typography>{children}</Typography>
+				<Typography component={'div'}>{children}</Typography>
 			)}
 		</div>
 	)
@@ -47,9 +47,14 @@ export default function Main() {
 		<Box sx={{
 			marginX: '2rem'
 		}}>
-			<Typography variant='h1' sx={{ marginY: '1rem' }}>QA Playground</Typography>
+			<Typography variant='h1'>Mui-ness</Typography>
 			<Typography variant='h2'>Tabs should scroll on small screens</Typography>
-			<Box sx={{ width: '100%', marginTop: '1rem' }}>
+			<Box sx={{
+				width: '100%',
+				marginY: '1rem',
+				marginX: 'auto',
+				maxWidth: '1200px'
+			}}>
 				<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
 					<Tabs variant='scrollable' value={value} onChange={handleChange} aria-label="basic tabs example">
 						<Tab data-test-class='mainTabButton' label="Text Field & List" {...a11yProps(0)} />

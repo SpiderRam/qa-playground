@@ -100,10 +100,11 @@ export default function InteractiveList() {
 							fontSize: '1.7rem',
 							marginTop: '0.5rem'
 						}}
+						id='mainTextFieldTabBehaviorsListHeader'
 					>
                         Behaviors
 					</Typography>
-					<ul className='behaviors'>
+					<ul data-testid='mainTextFieldTabBehaviorsList' aria-labelledby='mainTextFieldTabBehaviorsListHeader' className='behaviors'>
 						<li>List items will not survive page reload.</li>
 						<li>Buttons in the text field will be disabled if field is empty, and enabled when there is a value.</li>
 						<li>After clicking either text field icon, the field should retain focus.</li>
@@ -120,12 +121,14 @@ export default function InteractiveList() {
 							{listItems.map((item, index) => {
 								return (
 									<ListItem
+										role='mainTabListItem'
 										key={index}
 										secondaryAction={
 											<IconButton
+												data-testid={`mainTabListItemDeleteButton_${index}`}
 												color='secondary'
 												edge="end"
-												aria-label="delete"
+												aria-label="delete list item"
 												onClick={() => { removeItem(index) }}
 											>
 												<DeleteTwoToneIcon />
@@ -138,6 +141,8 @@ export default function InteractiveList() {
 											</Avatar>
 										</ListItemAvatar>
 										<ListItemText
+											aria-label='user list item'
+											data-testid={`mainTabListItem_${index}`}
 											primary={item}
 										/>
 									</ListItem>

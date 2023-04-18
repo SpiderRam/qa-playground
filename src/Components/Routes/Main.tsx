@@ -57,7 +57,7 @@ export default function Main() {
 				maxWidth: '1200px'
 			}}>
 				<Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-					<Tabs variant='scrollable' value={value} onChange={handleChange} aria-label="basic tabs example">
+					<Tabs variant='scrollable' value={value} onChange={handleChange} aria-label="Interactive component type tabs">
 						<Tab data-test-class='mainTabButton' label="Text Field & List" {...a11yProps(0)} />
 						<Tab data-test-class='mainTabButton' label="Date Picker" {...a11yProps(1)} />
 						<Tab data-test-class='mainTabButton' label="MultiSelect" {...a11yProps(2)} />

@@ -10,6 +10,8 @@ import CheckIcon from '@mui/icons-material/Check'
 import ClearIcon from '@mui/icons-material/Clear'
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import { Card, Grid, InputAdornment, TextField, Typography } from '@mui/material'
+import BehaviorsList from '../CommonComponents/BehaviorsList'
+import behaviors from '../../Data/Behaviors'
 
 export default function InteractiveList() {
   const textFieldRef = useRef<HTMLInputElement>()
@@ -85,27 +87,7 @@ export default function InteractiveList() {
             marginTop: '1rem',
           }}
         >
-          <Typography
-            sx={{
-              fontSize: '1.7rem',
-              marginTop: '0.5rem',
-            }}
-            id='mainTextFieldTabBehaviorsListHeader'
-          >
-            Behaviors
-          </Typography>
-          <ul
-            data-testid='mainTextFieldTabBehaviorsList'
-            aria-labelledby='mainTextFieldTabBehaviorsListHeader'
-            className='behaviors'
-          >
-            <li>List items will not survive page reload.</li>
-            <li>Buttons in the text field will be disabled if field is empty, and enabled when there is a value.</li>
-            <li>After clicking either text field icon, the field should retain focus.</li>
-            <li>When an item is added, it will appear at the top of the list.</li>
-            <li>Clicking the trash icon on any list item should delete that item.</li>
-            <li>On mobile screens, the text field should stack over the item list.</li>
-          </ul>
+          <BehaviorsList idPrefix='mainTextFieldTab' items={behaviors.mainTabTextFieldAndList}></BehaviorsList>
         </Card>
       </Grid>
       <Grid item={true} sx={{ paddingX: '1vw', paddingY: '2rem' }} xs={1} sm={3} md={3}>

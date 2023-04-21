@@ -8,7 +8,6 @@ import Menu from '@mui/material/Menu'
 import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
 import Button from '@mui/material/Button'
-import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import DesktopWindowsTwoToneIcon from '@mui/icons-material/DesktopWindowsTwoTone'
 import PhoneIphoneTwoToneIcon from '@mui/icons-material/PhoneIphoneTwoTone'
@@ -59,7 +58,7 @@ function NavBar() {
   }
 
   return (
-    <AppBar position='static'>
+    <AppBar position='relative' sx={{ zIndex: theme => theme.zIndex.drawer + 1 }}>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           {/* standard view */}
@@ -162,9 +161,7 @@ function NavBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title='Open settings'>
-              <InfoSnack message={snackMessage()} />
-            </Tooltip>
+            <InfoSnack message={snackMessage()} />
           </Box>
         </Toolbar>
       </Container>

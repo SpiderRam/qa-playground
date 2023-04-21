@@ -8,14 +8,22 @@
 
 ul.behaviors {
   text-align: left;
+  padding-inline-start: 20px;
+  list-style: none;
 }
 
-ul.behaviors li::marker {
+ul.behaviors li::before {
   content: url('./Images/bug_wrench_16px.png');
+  margin-right: 1ch;
 }
 
 ul.behaviors li {
   padding-left: 1ch;
+  font-family: 'Nunito', sans-serif;
+}
+
+ul.behaviors li:not(:last-child) {
+  margin-bottom: 10px;
 }
 
 .pulseIconButton {

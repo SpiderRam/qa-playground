@@ -12,8 +12,9 @@ import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
 import DesktopWindowsTwoToneIcon from '@mui/icons-material/DesktopWindowsTwoTone'
 import PhoneIphoneTwoToneIcon from '@mui/icons-material/PhoneIphoneTwoTone'
-import AppsTwoToneIcon from '@mui/icons-material/AppsTwoTone'
 import { Link } from 'react-router-dom'
+import InfoSnack from './InfoSnack'
+import icon16 from '../../Images/bug_wrench_16px.png'
 
 const pages = [
   {
@@ -25,31 +26,43 @@ const pages = [
     route: 'cards',
   },
 ]
-const settings = ['Snacks', 'Drawer', 'Progress', 'Logout']
+
+const snackMessage = () => {
+  return (
+    <div>
+      Items marked with the
+      <Typography
+        component='span'
+        sx={{
+          backgroundColor: '#fff',
+          padding: '3px 6px 1px',
+          borderRadius: '50px',
+          marginX: '1ch',
+        }}
+      >
+        <img src={icon16} alt='small bug icon' />
+      </Typography>
+      icon describe expected page behaviors, for possible test scenarios.
+    </div>
+  )
+}
 
 function NavBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(null)
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null)
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElNav(event.currentTarget)
-  }
-  const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorElUser(event.currentTarget)
   }
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null)
   }
 
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null)
-  }
-
   return (
     <AppBar position='static'>
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
+          {/* standard view */}
           <DesktopWindowsTwoToneIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant='h6'
@@ -109,6 +122,8 @@ function NavBar() {
               ))}
             </Menu>
           </Box>
+
+          {/* mobile view */}
           <PhoneIphoneTwoToneIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant='h5'
@@ -148,32 +163,8 @@ function NavBar() {
 
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title='Open settings'>
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <AppsTwoToneIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: 'white' }} />
-              </IconButton>
+              <InfoSnack message={snackMessage()} />
             </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id='menu-appbar'
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map(setting => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign='center'>{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
           </Box>
         </Toolbar>
       </Container>

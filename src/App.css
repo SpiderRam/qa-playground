@@ -1,15 +1,32 @@
 .App {
-    text-align: center;
+  text-align: center;
+}
+
+.navSnack {
+  top: 50px !important;
 }
 
 ul.behaviors {
-    text-align: left;
+  text-align: left;
 }
 
 ul.behaviors li::marker {
-    content: url('./Images/bug_wrench_16px.png');
+  content: url('./Images/bug_wrench_16px.png');
 }
 
 ul.behaviors li {
-    padding-left: 1ch;
+  padding-left: 1ch;
+}
+
+.pulseIconButton {
+  animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0px rgba(95, 165, 154, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+  }
 }

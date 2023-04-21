@@ -38,6 +38,17 @@ const theme = createTheme({
       contrastText: '#FFF',
     },
   },
+  components: {
+    MuiSnackbarContent: {
+      styleOverrides: {
+        root: {
+          color: '#fff',
+          backgroundColor: '#5f93a5',
+          border: '1px solid #0E5D77',
+        },
+      },
+    },
+  },
 })
 
 function App() {

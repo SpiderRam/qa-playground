@@ -48,6 +48,21 @@ export default function Main() {
         marginX: '2rem',
       }}
     >
+      <Typography
+        component='span'
+        className='pulseIconButton'
+        sx={{
+          position: 'absolute',
+          bottom: '90px',
+          right: '10px',
+          backgroundColor: '#fff',
+          padding: '3px 6px 1px',
+          borderRadius: '50px',
+          display: { xs: 'flex', md: 'none' },
+        }}
+      >
+        <img src={icon16} alt='small bug icon' />
+      </Typography>
       <Typography variant='h1'>Interactive Components</Typography>
       <Typography variant='h3' sx={{ display: { xs: 'none', md: 'block' } }}>
         <img src={icon16} alt='test behavior list bullet' /> Tabs should scroll on small screens

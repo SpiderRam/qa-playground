@@ -37,7 +37,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint src --color --fix",
     "lint-staged": "lint-staged --config lint-staged.js",
-    "prettier": "prettier src -check"
+    "prettier": "prettier src -w"
   },
   "browserslist": {
     "production": [

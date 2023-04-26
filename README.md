@@ -4,7 +4,7 @@ This project is a lightweight React app, intended to create some somewhat intere
 
 ## Available Scripts
 
-### Running locally 
+### Running locally
 
 Will launch at [http://localhost:9001/qa-playground](http://localhost:9001/qa-playground):
 
@@ -12,9 +12,20 @@ Will launch at [http://localhost:9001/qa-playground](http://localhost:9001/qa-pl
 npm start
 ```
 
+### Husky Hooks
+
+> pre-commit:
+
+- Staged files will be formatted and linted with [lint-staged](https://blog.logrocket.com/build-robust-react-app-husky-pre-commit-hooks-github-actions/) and prettier; errors prevent commit.
+- NOTE: src folder can be formatted at any time with `npm run prettier`, and checked by eslint with `npm run lint`.
+
+> pre-push:
+
+- Unit tests will run; failures prevent the push.
+
 ### Deployment
 
-Deploy the site to GitHub Pages, as described below.  Wraps the `npm run build` script.
+Deploy the site to GitHub Pages, as described below. Wraps the `npm run build` script.
 
 ```
 npm run deploy
@@ -32,7 +43,7 @@ This was built on node 16.15.1 / npm 8.11.0.
 
 ### General
 
-This project is a means to an end, and a simple deployment was a top priority.  
+This project is a means to an end, and a simple deployment was a top priority.
 
 - enable app routing
   - React Router v6 [guide](https://dev.to/salehmubashar/react-router-dom-36a2)

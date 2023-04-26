@@ -8,13 +8,7 @@ type BehaviorsListProps = {
 function BehaviorsList({ items, idPrefix }: BehaviorsListProps) {
   return (
     <>
-      <Typography
-        sx={{
-          fontSize: '1.7rem',
-          marginTop: '0.5rem',
-        }}
-        id={`${idPrefix}BehaviorsListHeader`}
-      >
+      <Typography variant='h4' id={`${idPrefix}BehaviorsListHeader`}>
         Behaviors
       </Typography>
       <ul

@@ -8,6 +8,7 @@ import { Drawer, IconButton } from '@mui/material'
 import behaviors from '../../Data/Behaviors'
 import { ReactNode, useState, SyntheticEvent, Fragment } from 'react'
 import BehaviorsList from '../CommonComponents/BehaviorsList'
+import MainTabDates from '../RouteComponents/MainTabDates'
 
 interface TabPanelProps {
   children?: ReactNode
@@ -75,7 +76,7 @@ export default function Main() {
       }}
     >
       <Typography variant='h1'>Interactive Components</Typography>
-      <Typography variant='h3' sx={{ display: { xs: 'none', md: 'block' } }}>
+      <Typography variant='h2' sx={{ display: { xs: 'none', md: 'block' } }}>
         <img src={icon16} alt='test behavior list bullet' /> Tabs should scroll on small screens
       </Typography>
       <Box
@@ -106,7 +107,7 @@ export default function Main() {
           <MainTabTextList />
         </TabPanel>
         <TabPanel value={tabIndex} index={1}>
-          Date Picker (TODO)
+          <MainTabDates />
         </TabPanel>
         <TabPanel value={tabIndex} index={2}>
           MultiSelect (TODO)
@@ -154,8 +155,9 @@ export default function Main() {
           PaperProps={{
             style: {
               width: window.innerWidth * 0.85,
-              paddingTop: '4.5rem',
+              paddingTop: '5rem',
               paddingRight: '1rem',
+              paddingLeft: '0.8rem',
             },
           }}
         >

@@ -16,12 +16,17 @@ const theme = createTheme({
       fontSize: '3rem',
     },
     h2: {
-      fontSize: '2rem',
-      color: '#2d2d2d',
+      fontSize: '1.8rem',
+      color: '#595959',
     },
     h3: {
       fontSize: '1.5rem',
-      color: '#595959',
+      color: 'black',
+    },
+    h4: {
+      fontSize: '1.3rem',
+      fontWeight: 400,
+      color: '#2d2d2d',
     },
   },
   palette: {
@@ -45,6 +50,21 @@ const theme = createTheme({
           color: '#fff',
           backgroundColor: '#5f93a5',
           border: '1px solid #0E5D77',
+        },
+      },
+    },
+    MuiToggleButton: {
+      styleOverrides: {
+        root: {
+          padding: '6px 11px 3px 11px',
+          color: '#073c34',
+          '&.Mui-selected': {
+            backgroundColor: 'eee',
+            color: '#777777',
+          },
+          '&:hover': {
+            backgroundColor: '#b4d5d0',
+          },
         },
       },
     },

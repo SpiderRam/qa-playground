@@ -135,7 +135,7 @@ export default function Main() {
           setActivePulse(false)
         }}
         sx={{
-          position: 'absolute',
+          position: 'fixed',
           bottom: '90px',
           right: '10px',
           backgroundColor: '#fff',

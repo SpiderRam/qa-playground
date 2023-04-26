@@ -13,9 +13,11 @@ function MainTabDates() {
     setDateView(newAlignment)
   }
 
+  const tabTitle = dateView === 'single' ? 'On this day in history....' : 'Seconds between'
+
   return (
     <>
-      <MainTabWrapper title='Date Pickers'>
+      <MainTabWrapper title={tabTitle}>
         <Box sx={{ marginTop: '1rem', marginBottom: '1.5rem' }}>
           <ToggleButtonGroup value={dateView} exclusive onChange={handleViewChange} aria-label='text alignment'>
             <ToggleButton value='single' aria-label='display single date'>

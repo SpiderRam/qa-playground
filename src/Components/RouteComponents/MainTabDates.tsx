@@ -13,7 +13,7 @@ function MainTabDates() {
     setDateView(newAlignment)
   }
 
-  const tabTitle = dateView === 'single' ? 'On this day in history....' : 'Seconds between'
+  const tabTitle = dateView === 'single' ? 'On this day in history....' : 'Dates within dates'
 
   return (
     <>

@@ -10,7 +10,9 @@ import { isMobile } from 'react-device-detect'
 
 function DateRange() {
   const today = new Date()
+  today.setHours(0, 0, 0, 0)
   const oneWeekOut = add(today, { weeks: 1 })
+  oneWeekOut.setHours(23, 59, 59, 59)
   const [startDate, setStartDate] = useState<Date | null | undefined>(today)
   const [endDate, setEndDate] = useState<Date | null | undefined>(oneWeekOut)
   const [rangedDate, setRangedDate] = useState<Date | null | undefined>(null)
@@ -49,6 +51,7 @@ function DateRange() {
                     },
                     clearButtonDisabled: !startDate,
                     calendarButtonDisabled: false,
+                    idPrefix: 'startDate',
                   })}
                 />
                 <DateTimePicker
@@ -72,6 +75,7 @@ function DateRange() {
                     },
                     clearButtonDisabled: !endDate,
                     calendarButtonDisabled: false,
+                    idPrefix: 'endDate',
                   })}
                 />
               </Stack>
@@ -109,6 +113,7 @@ function DateRange() {
                     },
                     clearButtonDisabled: !rangedDate,
                     calendarButtonDisabled: !startDate || !endDate,
+                    idPrefix: 'rangedDate',
                   })}
                 />
               </LocalizationProvider>

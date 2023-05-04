@@ -2,11 +2,13 @@ import Snackbar from '@mui/material/Snackbar'
 import Slide, { SlideProps } from '@mui/material/Slide'
 import InfoTwoToneIcon from '@mui/icons-material/InfoTwoTone'
 import { useState, ComponentType } from 'react'
+import { IconButton } from '@mui/material'
 
 type TransitionProps = Omit<SlideProps, 'direction'>
 
 type InfoSnackProps = {
   message: string | JSX.Element
+  buttonId: string
   direction?: 'left' | 'right' | 'up' | 'down' | undefined
   anchor?: {
     vertical: 'top' | 'bottom'
@@ -14,8 +16,9 @@ type InfoSnackProps = {
   }
 }
 
-export default function DirectionSnackbar({
+export default function InfoSnack({
   message,
+  buttonId,
   direction = 'left',
   anchor = { vertical: 'top', horizontal: 'right' },
 }: InfoSnackProps) {
@@ -37,7 +40,9 @@ export default function DirectionSnackbar({
 
   return (
     <div>
-      <InfoTwoToneIcon onClick={handleClick(SlideTransition)}>Right</InfoTwoToneIcon>
+      <IconButton classes={{ root: 'colorUnset' }} data-testid={buttonId} onClick={handleClick(SlideTransition)}>
+        <InfoTwoToneIcon></InfoTwoToneIcon>
+      </IconButton>
 
       <Snackbar
         classes={{

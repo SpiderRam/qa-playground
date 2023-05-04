@@ -19,6 +19,7 @@ type CustomSlotsProps = {
   popperToggleMethod: () => void
   clearButtonDisabled: boolean
   calendarButtonDisabled: boolean
+  idPrefix: string
 }
 
 const customSlots = ({
@@ -27,6 +28,7 @@ const customSlots = ({
   calendarButtonDisabled,
   popperToggleMethod,
   dateOpen,
+  idPrefix,
 }: CustomSlotsProps) => {
   const slots: {
     inputAdornment: () => JSX.Element
@@ -41,6 +43,7 @@ const customSlots = ({
         <InputAdornment position='end'>
           <>
             <IconButton
+              data-testid={`${idPrefix}ClearButton`}
               disabled={clearButtonDisabled}
               onClick={() => {
                 setDateMethod(null)
@@ -52,6 +55,7 @@ const customSlots = ({
           </>
           <>
             <IconButton
+              data-testid={`${idPrefix}CalendarButton`}
               disabled={calendarButtonDisabled}
               onClick={() => {
                 popperToggleMethod()
@@ -76,7 +80,7 @@ const customSlots = ({
             popperToggleMethod()
           }}
         >
-          <Popper sx={{ zIndex: 10 }} {...controlledProps} />
+          <Popper data-testid={`${idPrefix}Popup`} sx={{ zIndex: 10 }} {...controlledProps} />
         </ClickAwayListener>
       )
     },

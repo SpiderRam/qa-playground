@@ -1,6 +1,8 @@
 # QA Automation Playground
 
-This project is a lightweight React app, intended to create some somewhat interesting scenarios for experimenting with playwright, WDIO, and other automation tools that strike my fancy.
+This project is a lightweight React app, intended to create some somewhat interesting scenarios for experimenting with playwright, WDIO, and other automation tools that strike your fancy.
+
+---
 
 ## Available Scripts
 
@@ -30,6 +32,26 @@ Deploy the site to GitHub Pages, as described below. Wraps the `npm run build` s
 ```
 npm run deploy
 ```
+
+---
+
+## Unit Tests
+
+Unit tests are written with [React Testing Library](https://testing-library.com/docs/).
+
+To run all tests:
+
+```
+npm run test:unit
+```
+
+To run an individual test, see the command at the top of the file. Example:
+
+```
+npm run test:unit -- -t 'Main Tab Dates - Date Range'
+```
+
+---
 
 ## Setup Notes
 

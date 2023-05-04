@@ -14,17 +14,7 @@ import PhoneIphoneTwoToneIcon from '@mui/icons-material/PhoneIphoneTwoTone'
 import { Link } from 'react-router-dom'
 import InfoSnack from './InfoSnack'
 import icon16 from '../../Images/bug_wrench_16px.png'
-
-const pages = [
-  {
-    title: 'Nasa',
-    route: 'nasa',
-  },
-  {
-    title: 'Cards',
-    route: 'cards',
-  },
-]
+import { mobilePages, pages } from '../../Data/NavRoutes'
 
 const snackMessage = () => {
   return (
@@ -62,7 +52,7 @@ function NavBar() {
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           {/* standard view */}
-          <DesktopWindowsTwoToneIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <DesktopWindowsTwoToneIcon data-testid='navDesktopIcon' sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant='h6'
             noWrap
@@ -78,16 +68,18 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            <Link to={'/'} style={{ textDecoration: 'none', color: 'white' }}>
+            <Link data-testid='desktopNavLinkToHome' to={'/'} style={{ textDecoration: 'none', color: 'white' }}>
               E2E
             </Link>
           </Typography>
 
+          {/* Mobile view */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
+              data-testid='navMobileMenuIconButton'
               size='large'
-              aria-label='account of current user'
-              aria-controls='menu-appbar'
+              aria-label='app route options'
+              aria-controls='navMobileMenuPopup'
               aria-haspopup='true'
               onClick={handleOpenNavMenu}
               color='inherit'
@@ -95,7 +87,7 @@ function NavBar() {
               <MenuIcon />
             </IconButton>
             <Menu
-              id='menu-appbar'
+              id='navMobileMenuPopup'
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: 'bottom',
@@ -112,8 +104,8 @@ function NavBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map(page => (
-                <MenuItem key={page.title} onClick={handleCloseNavMenu}>
+              {mobilePages.map(page => (
+                <MenuItem data-testid={`navMobileMenuItem_${page.title}`} key={page.title} onClick={handleCloseNavMenu}>
                   <Link to={page.route} style={{ textDecoration: 'none', color: 'rgba(0,0,0,0.87)' }}>
                     {page.title}
                   </Link>
@@ -122,8 +114,7 @@ function NavBar() {
             </Menu>
           </Box>
 
-          {/* mobile view */}
-          <PhoneIphoneTwoToneIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <PhoneIphoneTwoToneIcon data-testid='navMobileIcon' sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant='h5'
             noWrap
@@ -139,13 +130,20 @@ function NavBar() {
               textDecoration: 'none',
             }}
           >
-            <Link to={'/'} style={{ textDecoration: 'none', color: 'white' }}>
+            <Link data-testid='mobileNavLinkToHome' to={'/'} style={{ textDecoration: 'none', color: 'white' }}>
               E2E
             </Link>
           </Typography>
+
+          {/* Standard view */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map(page => (
-              <Link key={page.title} to={page.route} style={{ textDecoration: 'none' }}>
+              <Link
+                data-testid={`navBarLink_${page.title}`}
+                key={page.title}
+                to={page.route}
+                style={{ textDecoration: 'none' }}
+              >
                 <Button
                   onClick={handleCloseNavMenu}
                   sx={{
@@ -161,7 +159,7 @@ function NavBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <InfoSnack message={snackMessage()} />
+            <InfoSnack buttonId='navBarInfoButton' message={snackMessage()} />
           </Box>
         </Toolbar>
       </Container>

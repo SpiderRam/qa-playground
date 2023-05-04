@@ -43,7 +43,8 @@
       }
     ],
     "prefer-const": 2,
-    "no-tabs": ["error", { "allowIndentationTabs": true }]
+    "no-tabs": ["error", { "allowIndentationTabs": true }],
+    "jest/no-conditional-expect": "off"
   },
   "ignorePatterns": ["build", ".cache", ".env"]
 }

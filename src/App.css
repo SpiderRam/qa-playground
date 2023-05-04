@@ -6,6 +6,10 @@
   top: 50px !important;
 }
 
+.colorUnset {
+  color: unset !important;
+}
+
 ul.behaviors {
   text-align: left;
   padding-inline-start: 20px;

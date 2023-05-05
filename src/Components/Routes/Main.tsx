@@ -157,11 +157,12 @@ export default function Main() {
               width: window.innerWidth * 0.85,
               paddingTop: '5rem',
               paddingRight: '1rem',
-              paddingLeft: '0.8rem',
+              paddingLeft: '1.2rem',
             },
           }}
         >
           {<BehaviorsList idPrefix='mainTextFieldTab' items={BehaviorLists[tabIndex]}></BehaviorsList>}
+          <div style={{ minHeight: '5rem' }}></div>
         </Drawer>
       </Fragment>
     </Box>

@@ -49,13 +49,26 @@ function SingleDate() {
             if (url) {
               return (
                 <Grid key={index} item={true} sx={{ paddingX: '1vw', paddingTop: '2rem' }} xs={1} sm={3} md={3}>
-                  <Link sx={{ textDecoration: 'none' }} color='secondary' href={url} target='_blank'>
+                  <Link
+                    data-testid={`dayInHistoryCard_${index}`}
+                    sx={{ textDecoration: 'none' }}
+                    color='secondary'
+                    href={url}
+                    target='_blank'
+                  >
                     <Card>
                       <CardContent>
-                        <Typography color='primary' component='span' sx={{ fontSize: '2rem' }}>
+                        <Typography
+                          data-testid={`dayInHistoryCardTitle_${index}`}
+                          color='primary'
+                          component='span'
+                          sx={{ fontSize: '2rem' }}
+                        >
                           {item.year}
                         </Typography>
-                        <Typography component='p'>{item.text}</Typography>
+                        <Typography data-testid={`dayInHistoryCardContent_${index}`} component='p'>
+                          {item.text}
+                        </Typography>
                       </CardContent>
                     </Card>
                   </Link>
@@ -89,7 +102,7 @@ function SingleDate() {
       />
       {showLoading ? (
         <Typography component='div' sx={{ marginTop: '4rem', display: 'flex', justifyContent: 'center' }}>
-          <CircularProgress />
+          <CircularProgress data-testid='singleDateLoadingSpinner' />
         </Typography>
       ) : (
         <>{renderCards()}</>

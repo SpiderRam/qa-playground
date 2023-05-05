@@ -3,32 +3,33 @@ import { fireEvent, render, screen, waitFor, within } from '@testing-library/rea
 import DateRange from './DateRange'
 import { add, addDays, format, isFirstDayOfMonth, isLastDayOfMonth, subDays } from 'date-fns'
 
+jest.setTimeout(10000)
+
 // npm run test:unit -- -t 'Main Tab Dates - Date Range'
 
 describe('Main Tab Dates - Date Range', () => {
   it('should display correct start and end dates by default', async () => {
     render(<DateRange />)
     const { todayDate, oneWeekOut } = getStartAndEndDates()
-    const startField = screen.getByLabelText(/start date/i)
-    const endField = screen.getByLabelText(/end date/i)
+    const startField: HTMLInputElement = screen.getByLabelText(/start date/i)
+    const endField: HTMLInputElement = screen.getByLabelText(/end date/i)
 
-    expect(startField).toHaveValue(formatDateTime(todayDate))
-    expect(endField).toHaveValue(formatDateTime(oneWeekOut))
+    verifyFieldValue(startField, todayDate)
+    verifyFieldValue(endField, oneWeekOut)
   })
 
   it('should clear all field values when clear all button is clicked', async () => {
-    jest.setTimeout(10000)
     render(<DateRange />)
     const { todayDate, oneWeekOut } = getStartAndEndDates()
-    const startField = screen.getByLabelText(/start date/i)
-    const endField = screen.getByLabelText(/end date/i)
-    const rangedField = screen.getByLabelText(/date within range/i)
+    const startField: HTMLInputElement = screen.getByLabelText(/start date/i)
+    const endField: HTMLInputElement = screen.getByLabelText(/end date/i)
+    const rangedField: HTMLInputElement = screen.getByLabelText(/date within range/i)
     const clearAllButton = screen.getByRole('button', { name: /clear all/i })
 
     selectTodayInRangedField(todayDate)
 
-    expect(startField).toHaveValue(formatDateTime(todayDate))
-    expect(endField).toHaveValue(formatDateTime(oneWeekOut))
+    verifyFieldValue(startField, todayDate)
+    verifyFieldValue(endField, oneWeekOut)
 
     fireEvent.click(clearAllButton)
 
@@ -38,7 +39,6 @@ describe('Main Tab Dates - Date Range', () => {
   })
 
   it('should test field icon buttons', async () => {
-    jest.setTimeout(10000)
     render(<DateRange />)
     const { todayDate } = getStartAndEndDates()
 
@@ -67,10 +67,6 @@ describe('Main Tab Dates - Date Range', () => {
         expect(screen.queryByTestId('rangedDateCalendarButton')).toBeDisabled()
       }
     }
-  })
-
-  it('should test error styling on ranged date field', async () => {
-    // todo
   })
 
   /**
@@ -126,10 +122,7 @@ describe('Main Tab Dates - Date Range', () => {
 })
 
 const formatDateTime = (date: Date) => {
-  const formatted = format(date, 'MM/dd/yyyy hh:mm aa').toLowerCase()
-  // Mui is adding these ugly chars in the field
-  const addMuiNonsense = formatted.replaceAll(' ', '⁩ ⁦')
-  return addMuiNonsense
+  return format(date, 'MM/dd/yyyy hh:mm aa').toLowerCase()
 }
 
 const getStartAndEndDates = () => {
@@ -142,7 +135,7 @@ const getStartAndEndDates = () => {
 
 const selectTodayInRangedField = async (todayDate: Date) => {
   const todayDigit = format(todayDate, 'd')
-  const rangedField = screen.getByLabelText(/date within range/i)
+  const rangedField: HTMLInputElement = screen.getByLabelText(/date within range/i)
   const rangedCalendarIcon = screen.getByTestId('rangedDateCalendarButton')
 
   fireEvent.click(rangedCalendarIcon)
@@ -161,8 +154,20 @@ const selectTodayInRangedField = async (todayDate: Date) => {
 
   await waitFor(
     async () => {
-      expect(rangedField).toHaveValue(formatDateTime(todayDate))
+      verifyFieldValue(rangedField, todayDate)
     },
     { timeout: 1000 },
   )
+}
+
+/**
+ * Use this instead of expect().toHaveValue for verifying the text
+ * value of date fields.
+ *
+ * Mui is adding invisible unicode chars in the field, see
+ * issue {@link https://github.com/mui/mui-x/issues/8150 on GitHub}.
+ */
+const verifyFieldValue = (field: HTMLInputElement, date: Date) => {
+  const fieldValue = field.value.replace(/[\u2066\u2067\u2068\u2069\u200e]/g, '')
+  expect(fieldValue).toEqual(formatDateTime(date))
 }

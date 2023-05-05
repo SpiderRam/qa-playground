@@ -9,7 +9,7 @@ const behaviors = {
   ],
   mainTabDates: [
     'On page load, the \'SINGLE\' view should be selected, and the tab title should read "On this day in history....".',
-    "SINGLE: the date picker format should be 'Month Day', and year should not be selectable in the picker.",
+    "SINGLE: the date picker format should be '<Month> <day>', and year should not be selectable in the picker.",
     'SINGLE: for any given date, cards should render, and for each the year should appear as the header, followed by a brief summary of an event, and each card when clicked should open a new tab linked to the relevant Wikipedia page.',
     'SINGLE: when a date is selected, while the data is loading, a spinner should appear pending new cards.',
     'When the user clicks the \'RANGE\' button, the title should change to "Dates within dates" and the view should update.',

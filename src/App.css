@@ -10,6 +10,11 @@
   color: unset !important;
 }
 
+.responsiveImage {
+  max-width: 100%;
+  height: auto;
+}
+
 ul.behaviors {
   text-align: left;
   padding-inline-start: 0.5rem;

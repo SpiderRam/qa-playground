@@ -62,6 +62,9 @@ This was built on node 16.15.1 / npm 8.11.0.
 ### Primary dependencies
 
 - [Mui](https://mui.com/material-ui/getting-started/overview/)
+- APIs:
+  - [Wikimedia](https://api.wikimedia.org/wiki/API_reference/Feed/On_this_day)
+  - [Dog API](https://dog.ceo/dog-api/documentation/)
 
 ### General
 

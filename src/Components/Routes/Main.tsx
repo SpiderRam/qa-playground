@@ -9,6 +9,7 @@ import behaviors from '../../Data/Behaviors'
 import { ReactNode, useState, SyntheticEvent, Fragment } from 'react'
 import BehaviorsList from '../CommonComponents/BehaviorsList'
 import MainTabDates from '../RouteComponents/MainTabDates'
+import MainTabAutoComplete from '../RouteComponents/MainTabAutoComplete'
 
 interface TabPanelProps {
   children?: ReactNode
@@ -110,7 +111,7 @@ export default function Main() {
           <MainTabDates />
         </TabPanel>
         <TabPanel value={tabIndex} index={2}>
-          MultiSelect (TODO)
+          <MainTabAutoComplete />
         </TabPanel>
         <TabPanel value={tabIndex} index={3}>
           Form (TODO)

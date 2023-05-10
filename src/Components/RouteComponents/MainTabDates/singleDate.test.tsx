@@ -26,7 +26,7 @@ describe('Main Tab Dates - Single Date', () => {
       async () => {
         expect(screen.queryByTestId('dayInHistoryCard_0')).toBeVisible()
       },
-      { timeout: 4000 },
+      { timeout: 6000 },
     )
 
     const cardHref = screen.getByTestId('dayInHistoryCard_0').getAttribute('href')

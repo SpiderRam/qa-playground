@@ -9,7 +9,7 @@ describe('Route - Main', () => {
     render(<Main />)
     const header = screen.getByText(/Interactive Components/i)
     expect(header).toBeInTheDocument()
-    const tabNames = ['Text Field & List', 'Date Picker', 'MultiSelect', 'Form', 'Data Grid', 'Dashboard', 'Swiper']
+    const tabNames = ['Text Field & List', 'Date Picker', 'AutoComplete', 'Form', 'Data Grid', 'Dashboard', 'Swiper']
     tabNames.forEach(tabName => {
       const text = new RegExp(tabName, 'i')
       const tab = screen.getByText(text)

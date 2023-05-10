@@ -6,13 +6,25 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import { ImageInfo } from '../RouteComponents/MainTabAutoComplete'
 import { ReactNode } from 'react'
 
-export default function ImageAccordion({ item, index, icon }: { item: ImageInfo; index: number; icon?: ReactNode }) {
+export default function ImageAccordion({
+  item,
+  icon,
+  expanded,
+  expandedIdentifier,
+  handleAccordions,
+}: {
+  item: ImageInfo
+  icon?: ReactNode
+  expanded: boolean
+  expandedIdentifier: string
+  handleAccordions: (panel: string) => (event: React.SyntheticEvent, isExpanded: boolean) => void
+}) {
   return (
-    <Accordion>
+    <Accordion expanded={expanded} onChange={handleAccordions(expandedIdentifier)}>
       <AccordionSummary
         expandIcon={<ExpandMoreIcon color='secondary' />}
-        aria-controls={`panel-${index + 1}-content`}
-        id={`panel-${index + 1}-header`}
+        aria-controls={`${expandedIdentifier}-content`}
+        id={`${expandedIdentifier}-header`}
       >
         {icon}
         <Typography>{item.display}</Typography>

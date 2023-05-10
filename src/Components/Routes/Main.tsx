@@ -20,7 +20,7 @@ interface TabPanelProps {
 const BehaviorLists = [
   behaviors.mainTabTextFieldAndList,
   behaviors.mainTabDates,
-  behaviors.mainTabMultiSelect,
+  behaviors.mainTabAutoComplete,
   behaviors.mainTabForm,
   behaviors.mainTabDataGrid,
   behaviors.mainTabDashboard,
@@ -97,7 +97,7 @@ export default function Main() {
           >
             <Tab data-test-class='mainTabButton' label='Text Field & List' {...a11yProps(0)} />
             <Tab data-test-class='mainTabButton' label='Date Picker' {...a11yProps(1)} />
-            <Tab data-test-class='mainTabButton' label='MultiSelect' {...a11yProps(2)} />
+            <Tab data-test-class='mainTabButton' label='AutoComplete' {...a11yProps(2)} />
             <Tab data-test-class='mainTabButton' label='Form' {...a11yProps(3)} />
             <Tab data-test-class='mainTabButton' label='Data Grid' {...a11yProps(4)} />
             <Tab data-test-class='mainTabButton' label='Dashboard' {...a11yProps(5)} />

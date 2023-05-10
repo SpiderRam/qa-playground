@@ -20,7 +20,7 @@ const behaviors = {
     "RANGE: clicking the 'CLEAR ALL' button should remove values from all fields.",
     'RANGE: the individual field clear buttons should be disabled in any field with no value.',
   ],
-  mainTabMultiSelect: [
+  mainTabAutoComplete: [
     'On page load, the autocomplete field should be disabled and have label "Loading...." until data populates.',
     'When the autocomplete enables, the label should change to "Dog breeds".',
     'Clicking in the field should open a dropdown with options prepended by checkboxes.',
@@ -34,6 +34,7 @@ const behaviors = {
     'Once the list has been reduced from five to less than five, all list items should reenable and the user should be able to add to the list again.',
     'The accordion elements should display the breed name as the title, prepended by a paw icon.',
     'When expanded, the accordion should contain a random image of that breed.',
+    'No more than one accordion should remain open at any time.',
     'NOTE: the dog breeds API is fun and free, but does sometimes return a bad image src url.',
   ],
   mainTabForm: ['TODO'],

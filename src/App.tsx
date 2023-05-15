@@ -68,6 +68,13 @@ const theme = createTheme({
         },
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        select: {
+          textAlign: 'left',
+        },
+      },
+    },
   },
 })
 

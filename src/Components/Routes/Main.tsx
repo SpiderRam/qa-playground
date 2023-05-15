@@ -10,6 +10,7 @@ import { ReactNode, useState, SyntheticEvent, Fragment } from 'react'
 import BehaviorsList from '../CommonComponents/BehaviorsList'
 import MainTabDates from '../RouteComponents/MainTabDates'
 import MainTabAutoComplete from '../RouteComponents/MainTabAutoComplete'
+import MainTabForm from '../RouteComponents/MainTabForm'
 
 interface TabPanelProps {
   children?: ReactNode
@@ -114,7 +115,7 @@ export default function Main() {
           <MainTabAutoComplete />
         </TabPanel>
         <TabPanel value={tabIndex} index={3}>
-          Form (TODO)
+          <MainTabForm />
         </TabPanel>
         <TabPanel value={tabIndex} index={4}>
           Data Grid (TODO)

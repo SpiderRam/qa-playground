@@ -2,13 +2,15 @@ import Snackbar from '@mui/material/Snackbar'
 import Slide, { SlideProps } from '@mui/material/Slide'
 import InfoTwoToneIcon from '@mui/icons-material/InfoTwoTone'
 import { useState, ComponentType } from 'react'
-import { IconButton } from '@mui/material'
+import { ClassNameMap, IconButton, IconButtonClasses } from '@mui/material'
 
 type TransitionProps = Omit<SlideProps, 'direction'>
 
 type InfoSnackProps = {
   message: string | JSX.Element
   buttonId: string
+  autoHide?: number | null
+  iconButtonClasses?: (Partial<IconButtonClasses> & Partial<ClassNameMap<never>>) | undefined
   direction?: 'left' | 'right' | 'up' | 'down' | undefined
   anchor?: {
     vertical: 'top' | 'bottom'
@@ -19,6 +21,8 @@ type InfoSnackProps = {
 export default function InfoSnack({
   message,
   buttonId,
+  autoHide = 3000,
+  iconButtonClasses,
   direction = 'left',
   anchor = { vertical: 'top', horizontal: 'right' },
 }: InfoSnackProps) {
@@ -40,7 +44,7 @@ export default function InfoSnack({
 
   return (
     <div>
-      <IconButton classes={{ root: 'colorUnset' }} data-testid={buttonId} onClick={handleClick(SlideTransition)}>
+      <IconButton classes={iconButtonClasses} data-testid={buttonId} onClick={handleClick(SlideTransition)}>
         <InfoTwoToneIcon></InfoTwoToneIcon>
       </IconButton>
 
@@ -54,7 +58,7 @@ export default function InfoSnack({
           },
         }}
         open={open}
-        autoHideDuration={3000}
+        autoHideDuration={autoHide}
         onClose={handleClose}
         anchorOrigin={anchor}
         TransitionComponent={transition}

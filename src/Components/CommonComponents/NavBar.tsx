@@ -159,7 +159,11 @@ function NavBar() {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-            <InfoSnack buttonId='navBarInfoButton' message={snackMessage()} />
+            <InfoSnack
+              buttonId='navBarInfoButton'
+              message={snackMessage()}
+              iconButtonClasses={{ root: 'colorUnset' }}
+            />
           </Box>
         </Toolbar>
       </Container>

@@ -7,6 +7,7 @@ import FormResistanceSelect from './MainTabForm/ResistanceSelect'
 import FormLifestyleSelect from './MainTabForm/LifestyleSelect'
 import FormNikitaSelect from './MainTabForm/NikitaSelect'
 import FormWorstEndingSelect from './MainTabForm/worstEndingSelect'
+import FormGameRatings from './MainTabForm/GameRatings'
 
 const houses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
 const lifestyles = ['Hobbit', 'Storm Trooper', 'Belter', 'Mutant', 'Fremen', 'Klingon']
@@ -93,6 +94,11 @@ function MainTabForm() {
           </Grid>
           <Grid item={true} sx={{ paddingX: '1vw', paddingTop: '2rem' }} xs={1} sm={1} md={1}>
             <FormWorstEndingSelect endings={worstEndings} fieldRef={endingsFieldRef} />
+          </Grid>
+        </Grid>
+        <Grid container columns={{ xs: 1, sm: 1, md: 1 }}>
+          <Grid item={true} sx={{ paddingX: '1vw', paddingTop: '2rem' }} xs={1} sm={1} md={1}>
+            <FormGameRatings />
           </Grid>
         </Grid>
         <Button type='submit' disabled={disableSubmit}>

@@ -6,6 +6,10 @@
   top: 50px !important;
 }
 
+.colorSecondary {
+  color: #0e7767 !important;
+}
+
 .colorUnset {
   color: unset !important;
 }
@@ -37,6 +41,10 @@ ul.behaviors li:not(:last-child) {
 
 .pulseIconButton {
   animation: pulse-animation 2s infinite;
+}
+
+.MuiSpeedDialAction-staticTooltipLabel {
+  white-space: nowrap !important;
 }
 
 @keyframes pulse-animation {

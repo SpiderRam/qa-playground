@@ -8,6 +8,8 @@ import FormLifestyleSelect from './MainTabForm/LifestyleSelect'
 import FormNikitaSelect from './MainTabForm/NikitaSelect'
 import FormWorstEndingSelect from './MainTabForm/worstEndingSelect'
 import FormGameRatings from './MainTabForm/GameRatings'
+import CrewOfMoya from './MainTabForm/CrewOfMoya'
+import farscapeCharacters from '../../Data/FarscapeCharacters'
 
 const houses = ['Gryffindor', 'Hufflepuff', 'Ravenclaw', 'Slytherin']
 const lifestyles = ['Hobbit', 'Storm Trooper', 'Belter', 'Mutant', 'Fremen', 'Klingon']
@@ -30,7 +32,7 @@ export type FormData = {
     'Cat Lady': number
     Firefly: number
   }
-  // crewOfMoya - https://mui.com/material-ui/react-chip/#avatar-chip
+  crewOfMoya?: typeof farscapeCharacters
   reynoldsEssay?: string
   chickenGood?: boolean
   eloraDanan?: boolean
@@ -96,9 +98,12 @@ function MainTabForm() {
             <FormWorstEndingSelect endings={worstEndings} fieldRef={endingsFieldRef} />
           </Grid>
         </Grid>
-        <Grid container columns={{ xs: 1, sm: 1, md: 1 }}>
-          <Grid item={true} sx={{ paddingX: '1vw', paddingTop: '2rem' }} xs={1} sm={1} md={1}>
+        <Grid container columns={{ xs: 1, sm: 2, md: 2 }} sx={{ alignItems: 'stretch' }}>
+          <Grid item={true} sx={{ paddingX: '1vw', paddingTop: '2rem', display: 'flex' }} xs={1} sm={1} md={1}>
             <FormGameRatings />
+          </Grid>
+          <Grid item={true} sx={{ paddingX: '1vw', paddingTop: '2rem', display: 'flex' }} xs={1} sm={1} md={1}>
+            <CrewOfMoya />
           </Grid>
         </Grid>
         <Button type='submit' disabled={disableSubmit}>

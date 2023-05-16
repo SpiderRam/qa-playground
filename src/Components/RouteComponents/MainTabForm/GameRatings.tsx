@@ -33,6 +33,7 @@ function FormGameRatings() {
   const [open, setOpen] = useState(false)
   const [games, setGames] = useState(gameObjects)
   const [selectedGame, setSelectedGame] = useState<BoardGame | null>(null)
+
   const handleOpen = () => setOpen(true)
   const handleClose = () => setOpen(false)
   const handleSelect = (e: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => {

@@ -14,6 +14,15 @@
   color: unset !important;
 }
 
+.customChipIcon {
+  color: #0e7767 !important;
+}
+
+.banishedChip {
+  color: black !important;
+  background-color: #cfcfcf !important;
+}
+
 .responsiveImage {
   max-width: 100%;
   height: auto;
